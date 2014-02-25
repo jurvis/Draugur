@@ -1,22 +1,22 @@
     {{!< default}}
-    <header class="site-header cover" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <header data-stellar-background-ratio=".5" class="site-header cover" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
         <section class="header-content">
             <a class="blog-title" href="/">{{@blog.title}}</a>
             <span class="blog-description">{{@blog.description}}</span>
             {{> links}}
         </section>
     </header>
-    
-    <main id="main" class="index" role="main">
+
+    <main data-stellar-background-ratio=".5" id="main" class="index" role="main">
         {{#foreach posts ~}}
         <article class="{{post_class}}">
             <header class="meta">
                 <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
                 <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm:ssZ'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time>
             </header>
-            <section class="post-content">{{content}}</section>
+            <section class="post-content">{{content words="60"}}<a href="{{url}}">Continue...</a></section>
         </article>
         {{~/foreach}}
-        {{pagination}}        
+        {{pagination}}
     </main>
-    
+
