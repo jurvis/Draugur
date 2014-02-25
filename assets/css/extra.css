@@ -1,0 +1,12 @@
+@media screen and (min-width: 25em) {
+  span {
+  font-size: 1.4em;
+  }
+  header.site-header.cover section.header-content span.blog-description {
+    margin-top: 0.3em;
+  }
+}
+
+header.site-header.cover nav.links {
+  margin-top: 0.4em;
+}
