@@ -14,7 +14,7 @@
                 <h1 class="post-title" itemprop="name headline"><a href="{{url}}"  itemprop="url">{{{title}}}</a></h1>
                 <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}" itemprop="datePublished">{{date format='D MMM YYYY'}}</time>
             </header>
-            <section class="post-content" itemprop="articleBody text">{{content}}</section>
+            <section class="post-content" itemprop="articleBody text">{{content words="50"}}<a href="{{url}}">Continue...</a></section>
 
         </article>
         {{~/foreach}}
