@@ -59,6 +59,7 @@ code {
     border: 1px solid $light-grey;
     font-size: 13px;
     font-family: Source Code Pro, monospace;
+    white-space: nowrap;
 }
 
 pre {
@@ -74,6 +75,7 @@ pre {
         border-radius: 0;
         padding: 0;
         border: none;
+        white-space: inherit;
     }
 
 }
@@ -119,22 +121,56 @@ blockquote {
     }
 }
 
-.post-content {
-    *:last-child {
-    margin-bottom: 0 !important;
+q {
+    display: block;
+    width: 100%;
+    margin: {
+        left: 0;
+        top: 1.5em;
+        bottom: 1.5em;
+        right: 0;
+    };
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 130%;
+    text-align: center;
+    font-style: italic;
+    &::before {
+        content: "\201C";
+    }
+    &::after {
+        content: "\201D";
     }
 }
 
-@media screen and (min-width: $mobile-size){ // Mobile and higher resolutions
+@media screen and (min-width: $mobile-width){ // Mobile and higher resolutions
     
     h1 {
         @include rem-size(2.5);
     }
+    q {
+        width: 110%;
+        margin: {
+            left: -5%;
+            top: 1.5em;
+            bottom: 1.5em;
+            right: 0;
+        };  
+    }
 }
 
-@media screen and (min-width: $tablet-size){ // Tablet and higher resolutions
+@media screen and (min-width: $tablet-width){ // Tablet and higher resolutions
     blockquote {
         margin-left: -24px;
+    }
+    q {
+        width: 120%;
+        margin: {
+            left: -10%;
+            top: 1.5em;
+            bottom: 1.5em;
+            right: 0;
+        };  
     }
     ul, ol {
         margin-left: 0;
@@ -144,7 +180,7 @@ blockquote {
     }
 }
 
-@media screen and (min-width: $desktop-size){ // Desktop higher resolutions
+@media screen and (min-width: $desktop-width){ // Desktop higher resolutions
     h1 {
         @include rem-size(4);
     }
